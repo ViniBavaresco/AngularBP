@@ -26,3 +26,11 @@ ul.social-network li {
 .fa-linkedin:hover{
   color: rgb(40, 20, 228);
 }
+
+.page-footer.font-small.pt-4{
+  background-color: rgb(255, 94, 0);
+}
+
+.bg{
+  background-color: rgb(184, 74, 31);
+}

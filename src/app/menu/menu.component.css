@@ -1,7 +1,11 @@
-.fs-16{
+.fs-16 {
   font-size: 16pt;
 }
 
-.a{
+.a {
   cursor: pointer;
+}
+
+.navbar.navbar-expand-lg.navbar-dark {
+  background-color: rgb(255, 94, 0);
 }
