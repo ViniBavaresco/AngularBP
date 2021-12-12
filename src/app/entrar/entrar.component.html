@@ -1,45 +1,46 @@
-<div class="container-fluid">
+<div class="container-fluid" id="background">
+  <div class="container">
+    <div class="row d-flex align-items-center">
 
-  <div class="row d-flex align-items-center">
+      <div class="container col-md-5 " id="form-entrar">
+        <div class="row d-flex justify-content-center">
 
-    <div class="col-md-6">
-
-      <div class="row d-flex justify-content-center">
-
-        <div class="col-md-6">
-
-          <h1 class="text-center mb-3">Entrar</h1>
-
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input [(ngModel)]="userLogin.email" class="form-control" type="text" name="email" id="email"
-              placeholder="Digite seu email">
+          <div class="container-entrar">
+            <h1 class="text-center text-white">Entrar</h1>
           </div>
 
-          <div class="form-group">
-            <label for="senha">Senha</label>
-            <input [(ngModel)]="userLogin.senha" class="form-control" type="password" name="senha" id="senha"
-              placeholder="Digite sua senha">
+          <div class="col-md-10 mt-5">
+
+            <div class="form-group fs-15">
+              <label for="email">Email</label>
+              <input [(ngModel)]="userLogin.email" class="form-control fs-15 text-white" type="text" name="email"
+                id="email" placeholder="Digite seu email">
+            </div>
+
+            <div class="form-group fs-15">
+              <label for="senha">Senha</label>
+              <input [(ngModel)]="userLogin.senha" class="form-control fs-15 text-white" type="password" name="senha"
+                id="senha" placeholder="Digite sua senha">
+            </div>
+
+            <div class="d-flex justify-content-center mt-5">
+              <button type="submit" class="btn btn-bg text-white mt-5" (click)="entrar()">Entrar</button>
+            </div>
+
+            <hr class="mt-4 mb-1">
+
+            <p class="text-center fs-15 text-white">
+              Não tem uma conta ainda?<br> <a routerLink="/cadastrar" class="link-color">Cadastre-se aqui</a>
+            </p>
+
           </div>
-
-          <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-success" (click)="entrar()">Entrar</button>
-          </div>
-
-          <hr class="mt-5 mb-5">
-
-          <p class="text-center">
-            Não tem uma conta? <a routerLink="/cadastrar">Cadastre-se aqui</a>
-          </p>
-
         </div>
+      </div>
 
+      <div class="col-md-7 align-items-center" id="form-entrar-d">
+        <div id="img-bg"></div>
       </div>
 
     </div>
-
-    <div class="col-md-6" id="img-bg"></div>
-
   </div>
-
 </div>

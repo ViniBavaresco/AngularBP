@@ -16,3 +16,9 @@ html
 .fs-18 {
   font-size: 18pt;
 }
+
+#background {
+  background-image: linear-gradient(180deg, rgb(18, 243, 230, 57%), rgb(18, 243, 230, 0%)),
+    linear-gradient(315deg, rgb(41, 51, 92, 90%), rgb(41, 51, 92, 60%), rgb(41, 51, 92, 30%)),
+    linear-gradient(25deg, rgb(219, 43, 57, 100%), rgb(219, 43, 57, 66%));
+}

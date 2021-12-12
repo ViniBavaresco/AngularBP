@@ -1,8 +1,89 @@
 #img-bg {
   background-image: url('https://i.imgur.com/bt01NDp.gif');
-  min-height: 657px;
+  min-height: 490px;
 
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+}
+
+#form-entrar {
+  background-color: #F3A712;
+  padding-right: 8rem;
+  padding-left: 8rem;
+  height: 400pt;
+  width: 400pt;
+  padding-top: 4%;
+  padding-bottom: 3%;
+
+  width: 600px;
+  padding: 20px 30px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  border-radius: 3rem;
+
+}
+
+.btn {
+  background-color: #29335c;
+  text-decoration: underline;
+  width: 80pt;
+  font-size: 15pt;
+  border-radius: 1rem;
+}
+
+.fs-15 {
+  font-size: 15pt;
+}
+
+#form-entrar-d {
+  background-color: #29335c;
+  height: 400pt;
+  width: 400pt;
+  background-size: auto;
+
+  padding-right: 8rem;
+  padding-left: 8rem;
+
+  padding-top: 4%;
+  padding-bottom: 3%;
+
+  width: 600px;
+  padding: 20px 30px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  border-radius: 3rem;
+  text-align: center;
+}
+
+.container-entrar {
+  background-color: #29335c;
+  width: 150pt;
+  text-align: center;
+  border-radius: 4rem;
+}
+
+hr {
+  border-color: black;
+}
+
+.link-color {
+  color: #0003c7;
+}
+
+.form-group {
+  margin: 8px;
+  color: #ffffff;
+}
+
+.form-control {
+  background-color: #29335c;
+  border-radius: 1rem;
+}
+
+input::placeholder {
+  color: rgb(212, 212, 212);
+}
+
+label {
+  margin-bottom: 0px;
 }
