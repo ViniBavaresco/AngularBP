@@ -9,28 +9,28 @@ ul.social-network li {
   padding: 5px;
 }
 
-.fa{
+.fa {
   padding: 10px;
   color: white;
   font-size: 35pt;
 }
 
-.fa-facebook:hover{
+.fa-facebook:hover {
   color: rgb(5, 43, 167);
 }
 
-.fa-instagram:hover{
+.fa-instagram:hover {
   color: rgb(243, 69, 69);
 }
 
-.fa-linkedin:hover{
+.fa-linkedin:hover {
   color: rgb(40, 20, 228);
 }
 
-.page-footer.font-small.pt-4{
-  background-color: rgb(255, 94, 0);
+.page-footer.font-small.pt-4 {
+  background-color: #F3A712;
 }
 
-.bg{
-  background-color: rgb(184, 74, 31);
+.bg {
+  background-color: #c98a0c;
 }
