@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment.prod';
 import { UserLogin } from '../model/UserLogin';
 import { AuthService } from '../service/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-entrar',
@@ -40,7 +41,13 @@ export class EntrarComponent implements OnInit {
       this.router.navigate(['/inicio'])
     }, erro => {
       if (erro.status == 401) {
-        alert('Email e/ou senha incorretos')
+        Swal.fire({
+          icon: 'warning',
+          title: 'Email e/ou senha incorretos',
+          confirmButtonText: 'Certo!',
+          timer: 3000,
+          timerProgressBar: true,
+        })
       }
     })
   }

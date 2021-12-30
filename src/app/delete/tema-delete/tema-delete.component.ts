@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Tema } from 'src/app/model/Tema';
 import { TemaService } from 'src/app/service/tema.service';
 import { environment } from 'src/environments/environment.prod';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-tema-delete',
@@ -36,7 +37,13 @@ export class TemaDeleteComponent implements OnInit {
 
   apagar() {
     this.temaService.deleteTema(this.idTema).subscribe(() => {
-      alert('Tema apagado com sucesso!')
+      Swal.fire({
+        title: 'Tema apagado com sucesso!',
+        icon: 'success',
+        confirmButtonText: 'Certo!',
+        timer: 3000,
+        timerProgressBar: true,
+      });
       this.router.navigate(['/tema'])
     })
   }
