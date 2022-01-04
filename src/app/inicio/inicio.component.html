@@ -6,7 +6,7 @@
       <div class="row d-flex justify-content-center">
         <div class="col-md-6 text-white">
           <h1 class="fs-54">Seja bem vindo(a)!</h1>
-          <h5 class="fs-18">expresse aqui os seus pensamentos e opniões!</h5>
+          <h5 class="fs-18">Expresse aqui os seus pensamentos e opiniões!</h5>
         </div>
       </div>
 
@@ -27,8 +27,10 @@
 
 </div>
 
+<!--Postagens-->
 <div class="container mb-5 mt-5" id="postagens">
 
+  <!--Nav De Postagens-->
   <nav>
     <div class="nav nav-tabs d-flex justify-content-center" id="nav-tab" role="tablist">
 
@@ -45,77 +47,114 @@
     </div>
   </nav>
 
+  <!--Conteúdo De Postagens-->
   <div class="tab-content mt-5" id="nav-tabContent">
 
+    <!--Todas As Postagens-->
     <div class="tab-pane fade show active" id="todasPostagens" role="tabpanel" aria-labelledby="nav-todasPostagens-tab">
 
-      <div class="card-columns">
-        <div class="card text-center" *ngFor='let item of listaPostagens'>
-          <div class="card-body">
-            <h5 class="card-title m-0">{{item.titulo}}</h5>
-            <small class="text-muted"> Tema: {{item.tema.descricao}}</small>
-            <p class="card-text mt-3">{{item.texto}}</p>
-            <p class="card-text"><small class="text-muted">
-                {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
-              </small></p>
-
-            <p class="card-text"><small class="text-muted">
-                por: {{item.usuario.nome}}
-              </small></p>
+      <div class="row d-flex justify-content-center mt-5 mb-5">
+        <div class="col-md-4">
+          <div class="form-group">
+            <input type="text" class="form-control" id="titulo"
+              placeholder="Digite um título de postagem para pesquisar" [(ngModel)]='tituloPost'
+              (keyup)='findByTituloPostagem()'>
           </div>
         </div>
       </div>
 
+      <div class="card-columns">
+        <div class="card text-center" *ngFor='let item of listaPostagens | orderBy : key : reverse'>
+          <div class="card-body">
+
+            <div class="d-flex justify-content-start align-items-center bgcol mb-3">
+              <img src="{{foto}}" alt="Imagem do usuário" width="40px" max-height="40px"
+                class="img-fluid rounded-circle textname my-2">
+              <p class="card-text text-white textname"><small><b>
+                    {{item.usuario.nome}}
+                  </b>
+                </small></p>
+            </div>
+
+            <h5 class="card-title m-0">{{item.titulo}}</h5>
+            <small class="text-muted"> Tema: {{item.tema.descricao}}</small>
+            <p class="card-text mt-3">{{item.texto}}</p>
+            <p class="card-text row d-flex justify-content-end"><small class="text-muted mr-2">
+                {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
+              </small></p>
+
+          </div>
+        </div>
+      </div>
     </div>
 
+    <!--Minhas Postagens-->
     <div class="tab-pane fade" id="minhasPostagens" role="tabpanel" aria-labelledby="nav-minhasPostagens-tab">
-
       <div class="card-columns">
-        <div class="card text-center" *ngFor='let item of user.postagem'>
+        <div class="card text-center" *ngFor='let item of user.postagem | orderBy : key : reverse'>
           <div class="card-body">
+
             <h5 class="card-title m-0">{{item.titulo}}</h5>
             <small class="text-muted"> Tema: {{item.tema.descricao}}</small>
             <p class="card-text mt-3">{{item.texto}}</p>
-            <p class="card-text"><small class="text-muted">
+            <p class="card-text row d-flex justify-content-end"><small class="text-muted mr-2">
                 {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
               </small></p>
 
-            <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
-            <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+            <div class="col-md-12 d-flex justify-content-center">
+              <div class="col-md-3"></div>
+              <div class="col-md-6 d-flex justify-content-center bgbutton">
+                <a [routerLink]="['/postagem-edit', item.id]" class="text-info mr-3" href="">Editar</a>
+                <a [routerLink]="['/postagem-delete', item.id]" class="text-danger" href="">Apagar</a>
+              </div>
+              <div class="col-md-3"></div>
+            </div>
 
           </div>
         </div>
       </div>
-
     </div>
 
+    <!--Postagens Por Tema-->
     <div class="tab-pane fade" id="postagemTema" role="tabpanel" aria-labelledby="nav-postagemTema-tab">
 
+      <div class="row d-flex justify-content-center mt-5 mb-5">
+        <div class="col-md-4">
+          <div class="form-group">
+            <input type="text" class="form-control" id="titulo"
+              placeholder="Digite um tema para pesquisar" [(ngModel)]='nomeTema'
+              (keyup)='findByNomeTema()'>
+          </div>
+        </div>
+      </div>
 
-      <div class="card-columns" *ngFor='let tema of listaTemas'>
+      <div class="card-columns" *ngFor='let tema of listaTemas | orderBy : key : reverse'>
         <div class="card text-center" *ngFor='let item of tema.postagem'>
           <div class="card-body">
+
+            <div class="d-flex justify-content-start align-items-center bgcol mb-3">
+              <img src="{{foto}}" alt="Imagem do usuário" width="40px" max-height="40px"
+                class="img-fluid rounded-circle textname my-2">
+              <p class="card-text text-white textname"><small><b>
+                    {{item.usuario.nome}}
+                  </b>
+                </small></p>
+            </div>
+
             <h5 class="card-title m-0">{{item.titulo}}</h5>
             <p class="card-text mt-3">{{item.texto}}</p>
-            <p class="card-text"><small class="text-muted">
+            <p class="card-text textdata"><small class="text-muted">
                 {{item.data | date: 'dd/MM/yyyy'}} às {{item.data | date: 'HH:mm'}}
-              </small></p>
-
-            <p class="card-text"><small class="text-muted">
-                por: {{item.usuario.nome}}
               </small></p>
 
           </div>
         </div>
       </div>
-
     </div>
+
   </div>
 
 </div>
-
-
-
 
 
 <!-- Modal -->

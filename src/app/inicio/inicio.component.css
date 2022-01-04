@@ -1,4 +1,28 @@
-.bg{
+.bg {
   background-color: #29335c;
 }
 
+.textdata {
+  margin-left: 30vh;
+}
+
+.textname {
+  font-size: 20px;
+  margin-left: 10px;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.bgcol {
+  background-color: #29335c;
+  border-radius: 10px;
+}
+
+.card-body {
+  background-color: #ffffff;
+}
+
+.bgbutton {
+  border-radius: 30px;
+  background-color: #dbdbdb;
+}
